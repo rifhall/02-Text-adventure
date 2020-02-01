@@ -1,0 +1,110 @@
+{
+	"DECK": {
+		"name": "Deck",
+		"desc": "You are on the deck of the pirate ship 'The Meridian'. All the life boats are gone except for what appears to be one with a hole in the bottom.",
+		"exits": [{
+			"exit": "MAST",
+			"target": "MAST"
+		}],
+		"items": []
+	},
+	"MAST": {
+		"name": "Crows Nest",
+		"desc": "You are atop the mast in the Crow's Nest. You can't make out much but around you is a spyglass.",
+		"exits": [{
+			"exit": "the deck",
+			"target": "DECK"
+		}],
+		"items": []
+	},
+	"BOW": {
+		"name": "You are on the bow of the ship",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"CROOM": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"g": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"r": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"o": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"k": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"h": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"y": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"f": {
+		"name": "",
+		"desc": "",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	},
+	"DPIT": {
+		"name": "Deep Pit",
+		"desc": "This is a pit that you can not escape from. You are trapped",
+		"exits": [{
+			"exit": "",
+			"target": ""
+		}],
+		"items": []
+	}
+}

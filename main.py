@@ -4,7 +4,7 @@ import sys, os, json
 assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 
 # The game and item description files (in the same folder as this script)
-game_file = 'zork.json'
+game_file = 'ship.json'
 item_file = 'items.json'
 
 
@@ -20,48 +20,53 @@ def load_files():
         print("There was a problem reading either the game or item file.")
         os._exit(1)
 
-def render(game,current):
+
+#tells you the name and desc for the current room
+def render(game,items,current):
     c = game[current]
-    print("You are at the " + c["name"])
+    print(c["name"])
     print(c["desc"])
 
+    #displays items
+    for i in c["items"]
+        print(i["desc"])
+    
+#Where we get the players actions
 def get_input():
-    response = input("What do you want to do? ")
+    #asks for input
+    print("What would you like to do?")
+    #seperate for new line
+    response = input()
+    #make sure all exit(s) are one word and upper case
     response = response.upper().strip()
     return response
 
-def update(game,current,response):
+def update(game,items,current,response):
     c = game[current]
     for e in c["exits"]:
         if response == e["exit"]:
             return e["target"]
     return current
 
+
 # The main function for the game
 def main():
-    current = 'WHOUS'  # The starting location
+    current = 'DECK'  # The starting location
     end_game = ['END']  # Any of the end-game locations
 
     (game,items) = load_files()
 
-    # Add your code here
-
     while True:
-        render(game,current)
-
-        for e in end_game:
-            if current == e:
-                print("You win!")
-                break #break out of the while loop
-
+        render(game, items, current)
         response = get_input()
+        
+        #breaks the game if they type this 
+        if response == "QUIT":
+            break
+        
+        #will update the game
+        current = update(game,items,current,response)
 
-        if response == "QUIT" or response == "Q":
-            break #break out of the while loop
-
-        current = update(game,current,response)
-
-    print("Thanks for playing!")
 
 # run the main function
 if __name__ == '__main__':
