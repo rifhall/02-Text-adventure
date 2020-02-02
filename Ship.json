@@ -1,4 +1,13 @@
 {
+	"BEGIN": {
+		"name": "Welcome to 'ESCAPE FROM THE MERIDIAN', a text adventure game",
+		"desc": "In order to begin, type: START \nIf you ever need to quit the game, type: QUIT",
+		"exits": [{
+			"exit": "START",
+			"target": "DECK"
+		}],
+		"items": []
+	},
 	"DECK": {
 		"name": "Deck",
 		"desc": "You are on the deck of the pirate ship 'The Meridian'. All the life boats are gone except for what appears to be one with a hole in the bottom.",

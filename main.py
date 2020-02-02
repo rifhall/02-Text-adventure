@@ -7,6 +7,10 @@ assert sys.version_info >= (3,7), "This script requires at least Python 3.7"
 game_file = 'ship.json'
 item_file = 'items.json'
 
+#setting up variables
+inventory = []
+moves = 0
+
 
 # Load the contents of the files into the game and items dictionaries. You can largely ignore this
 # Sorry it's messy, I'm trying to account for any potential craziness with the file location
@@ -20,6 +24,13 @@ def load_files():
         print("There was a problem reading either the game or item file.")
         os._exit(1)
 
+#only displays an item only if it is not in your inventory
+def check_inventory(item):
+    for i in inventory:
+        if i == item:
+            return True
+    return False
+
 
 #tells you the name and desc for the current room
 def render(game,items,current):
@@ -28,13 +39,13 @@ def render(game,items,current):
     print(c["desc"])
 
     #displays items
-    for i in c["items"]
+    for i in c["items"]:
         print(i["desc"])
     
 #Where we get the players actions
 def get_input():
     #asks for input
-    print("What would you like to do?")
+    print("\nWhat would you like to do?")
     #seperate for new line
     response = input()
     #make sure all exit(s) are one word and upper case
@@ -42,16 +53,27 @@ def get_input():
     return response
 
 def update(game,items,current,response):
+    if response == "INVENTORY":
+        print("You are carrying:")
+        if len(inventory) == 0:
+            print("Nothing")
+        else:
+            for i in inventory:
+                print(i.lower())
+        return current
+
     c = game[current]
     for e in c["exits"]:
         if response == e["exit"]:
             return e["target"]
+
+
     return current
 
 
 # The main function for the game
 def main():
-    current = 'DECK'  # The starting location
+    current = 'BEGIN'  # The starting location
     end_game = ['END']  # Any of the end-game locations
 
     (game,items) = load_files()
