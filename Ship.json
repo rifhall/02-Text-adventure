@@ -14,6 +14,18 @@
 		"exits": [{
 			"exit": "MAST",
 			"target": "MAST"
+		},{
+			"exit": "BOW",
+			"target": "BOW"
+		},{
+			"exit": "CROOM",
+			"target": "CROOM"
+		},{
+			"exit": "MAST",
+			"target": "MAST"
+		},{
+			"exit": "CANNONR",
+			"target": "CANNONR"
 		}],
 		"items": []
 	},
@@ -21,77 +33,95 @@
 		"name": "Crows Nest",
 		"desc": "You are atop the mast in the Crow's Nest. You can't make out much but around you is a spyglass.",
 		"exits": [{
-			"exit": "the deck",
+			"exit": "DECK",
 			"target": "DECK"
 		}],
 		"items": []
 	},
 	"BOW": {
-		"name": "You are on the bow of the ship",
-		"desc": "",
+		"name": "Bow of the ship",
+		"desc": "You are at the front of the ship, watching as the waves break against the wood. There are some devices about that you may be able to interact with.",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "DECK",
+			"target": "DECK"
 		}],
 		"items": []
 	},
 	"CROOM": {
-		"name": "",
-		"desc": "",
+		"name": "Captians Quarters",
+		"desc": "These are where the Captian kept his personal affects and would sleep during the night. There are various trinkets and items lying about.",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "DECK",
+			"target": "DECK"
 		}],
 		"items": []
 	},
-	"g": {
-		"name": "",
-		"desc": "",
+	"HELM": {
+		"name": "HELM",
+		"desc": "You are on the back of the ship where the steering wheel is located.",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "DECK",
+			"target": "DECK"
 		}],
 		"items": []
 	},
-	"r": {
-		"name": "",
-		"desc": "",
+	"CREWR": {
+		"name": "CREW'S QUARTERS",
+		"desc": "You are below deck, where the crew slept. The place apears thourghly ransacked but you still may be able to find some things",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "DECK",
+			"target": "DECK"
+		},{
+			"exit": "CANNONR",
+			"target": "CANNONR"
 		}],
 		"items": []
 	},
-	"o": {
-		"name": "",
-		"desc": "",
+	"CANNONR": {
+		"name": "CANNON ROOM",
+		"desc": "You are bellow deck where the cannons should be kept for battle. Most appear broken or disassembled.",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "DECK",
+			"target": "DECK"
+		},{
+			"exit": "CREWR",
+			"target": "CREWR"
+		},{
+			"exit": "MUNITIONSR",
+			"target": "MUNITIONSR"
+		},{
+			"exit": "CANNONR",
+			"target": "CANNONR"
 		}],
 		"items": []
 	},
-	"k": {
-		"name": "",
-		"desc": "",
+	"MUNITIONSR": {
+		"name": "MUNITIONS STORAGE ROOM",
+		"desc": "It appears you are where the storage for the ships munitions. There is nothing out of the ordinary here or so it seems",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "PRISION",
+			"target": "PRISION"
+		},{
+			"exit": "CANNONR",
+			"target": "CANNONR"
 		}],
 		"items": []
 	},
-	"h": {
-		"name": "",
-		"desc": "",
+	"PRISION": {
+		"name": "PRISION ROOM",
+		"desc": "You have found the room where traitors and captured individuals were stored. The cells seem locked and inside you can see those who met and unfortunate end.",
 		"exits": [{
-			"exit": "",
-			"target": ""
+			"exit": "CANNONR",
+			"target": "CANNONR"
+		},{
+			"exit": "MUNITIONSR",
+			"target": "MUNITIONSR"
 		}],
 		"items": []
 	},
-	"y": {
-		"name": "",
-		"desc": "",
+	"BOTTOM": {
+		"name": "BOTTOM OF THE SEA",
+		"desc": "You have drowned and met your fate.",
 		"exits": [{
 			"exit": "",
 			"target": ""
@@ -101,15 +131,6 @@
 	"f": {
 		"name": "",
 		"desc": "",
-		"exits": [{
-			"exit": "",
-			"target": ""
-		}],
-		"items": []
-	},
-	"DPIT": {
-		"name": "Deep Pit",
-		"desc": "This is a pit that you can not escape from. You are trapped",
 		"exits": [{
 			"exit": "",
 			"target": ""
