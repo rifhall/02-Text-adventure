@@ -70,11 +70,16 @@ def update(game,items,current,response):
         for i in c["items"]:
             #prints all the items
             print(i["item"])
+            #gets input from the player
             which = input()
             which = which.upper()
+            #if the item is one in the list it adds it and reads off the take description
             if (which == i["item"]) and not (check_inventory(i["item"])):
                 print(i["take"])
                 inventory.append(i["item"])
+            #the game will display this if ya type something in wrong
+            else:
+                print("Didnt type that right, please tryagian")
         return current
 
     return current
