@@ -28,7 +28,7 @@
 			"target": "CANNONR"
 		}],
 		"items": [{
-			"item": "A BROKEN LIFEBOAT",
+			"item": "BROKEN LIFEBOAT",
 			"desc": "A Boat left behind. It was not of use to them but may be yet of use to you",
 			"take": "You bring the boat on the deck of the ship. You should be able to access it whenever."
 		}]
@@ -40,7 +40,11 @@
 			"exit": "DECK",
 			"target": "DECK"
 		}],
-		"items": []
+		"items": [{
+			"item": "SPYGLASS",
+			"desc": "A spyglass that will help you see great distances. Upon further inspection the lens is cracked. You will have to locate another one to use this",
+			"take": "You but it in your bag with hopes of finding the tools to repair it."
+		}]
 	},
 	"BOW": {
 		"name": "Bow of the ship",
@@ -58,7 +62,11 @@
 			"exit": "DECK",
 			"target": "DECK"
 		}],
-		"items": []
+		"items": [{
+			"item": "MYSTERIOUS KEY",
+			"desc": "A key seemingly abandoned. It has an old shine to it.",
+			"take": "You put the key in your pocket, but who knows if it will actually unlock anything"
+		}]
 	},
 	"HELM": {
 		"name": "HELM",
@@ -109,7 +117,11 @@
 			"exit": "CANNONR",
 			"target": "CANNONR"
 		}],
-		"items": []
+		"items": [{
+			"item": "USELESS CANNONBALL",
+			"desc": "A cannonball made out of iron. Weights heavy but with no gunpowder it wont do anything",
+			"take": "You put it in your bag but the only thing this will acomplish is take you to the bottom of the sea faster."
+		}]
 	},
 	"PRISION": {
 		"name": "PRISION ROOM",
@@ -121,7 +133,11 @@
 			"exit": "MUNITIONSR",
 			"target": "MUNITIONSR"
 		}],
-		"items": []
+		"items": [{
+			"item": "PLANK OF WOOD",
+			"desc": "A rotting plack of wood that someone in the cell must have peeled off in a futile attemp to escape",
+			"take": "You take it in hopes of repairing the ship, but deep down you know that it is too small and wont fix the gaping hole."
+		}]
 	},
 	"BOTTOM": {
 		"name": "BOTTOM OF THE SEA",

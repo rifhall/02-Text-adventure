@@ -1,16 +1,26 @@
 {
-    "PAMPHLET": {
-       "exits": {},
-       "actions": {
-          "read": "The pamphlet says, Welcome to Zork!"
-       },
-       "points": 1
+   "BROKEN LIFEBOAT": {
+      "exits": {},
+      "actions": {}
     },
-    "SWORD": {
-       "exits": {
-          "CELLA": "The sword glows with a faint blue glow!"
-       },
-       "actions": {},
-       "points": 10
+   "PLANK OF WOOD": {
+      "exits": {},
+      "actions": {}
+    },
+   "MYSTERIOUS KEY": {
+      "exits": {},
+      "actions": {}
+    },
+    "RUSTY KNIFE": {
+      "exits": {},
+      "actions": {}
+    },
+    "USELESS CANNONBALL": {
+      "exits": {},
+      "actions": {}
+    },
+    "SPYGLASS": {
+      "exits": {},
+      "actions": {}
     }
  }

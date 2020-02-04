@@ -51,11 +51,11 @@ def get_input():
 def update(game,items,current,response,moves):
     if moves == 20:
         current == "BREAK"
-        c = game[current]
+        return current
 
     elif moves > 20:
-        c = game[current]
         current == "BOTTOM"
+        return current
 
     else:
         #allows the player to check their inventory
@@ -79,6 +79,7 @@ def update(game,items,current,response,moves):
             for i in c["items"]:
                 #prints all the items
                 print(i["item"])
+                print(i["desc"])
                 #gets input from the player
                 which = input()
                 which = which.upper()
@@ -88,11 +89,8 @@ def update(game,items,current,response,moves):
                     inventory.append(i["item"])
                 #the game will display this if ya type something in wrong
                 else:
-                    print("Didnt type that right, please tryagian")
+                    print("You already have that item")
                 return current
-
-        if response[0:2] == "GET":
-            print("There is nothing here anymore")
 
         return current
 
