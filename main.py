@@ -48,41 +48,53 @@ def get_input():
     response = response.upper().strip()
     return response
 
-def update(game,items,current,response):
-    #allows the player to check their inventory
-    if response == "INVENTORY":
-        print("You are carrying:")
-        if len(inventory) == 0:
-            print("Nothing")
-        else:
-            for i in inventory:
-                print(i.lower())
-        return current
+def update(game,items,current,response,moves):
+    if moves == 20:
+        current == "BREAK"
+        c = game[current]
 
-    c = game[current]
-    for e in c["exits"]:
-        if response == e["exit"]:
-            return e["target"]
-    
-    #will go through all the available items if they type get
-    if response == "GET":
-        #does a for loop for all items
-        for i in c["items"]:
-            #prints all the items
-            print(i["item"])
-            #gets input from the player
-            which = input()
-            which = which.upper()
-            #if the item is one in the list it adds it and reads off the take description
-            if (which == i["item"]) and not (check_inventory(i["item"])):
-                print(i["take"])
-                inventory.append(i["item"])
-            #the game will display this if ya type something in wrong
+    elif moves > 20:
+        c = game[current]
+        current == "BOTTOM"
+
+    else:
+        #allows the player to check their inventory
+        if response == "INVENTORY":
+            print("You are carrying:")
+            if len(inventory) == 0:
+                print("Nothing")
             else:
-                print("Didnt type that right, please tryagian")
-        return current
+                for i in inventory:
+                    print(i.lower())
+            return current
 
-    return current
+        c = game[current]
+        for e in c["exits"]:
+            if response == e["exit"]:
+                return e["target"]
+        
+        #will go through all the available items if they type get
+        if response == "GET":
+            #does a for loop for all items
+            for i in c["items"]:
+                #prints all the items
+                print(i["item"])
+                #gets input from the player
+                which = input()
+                which = which.upper()
+                #if the item is one in the list it adds it and reads off the take description
+                if (which == i["item"]) and not (check_inventory(i["item"])):
+                    print(i["take"])
+                    inventory.append(i["item"])
+                #the game will display this if ya type something in wrong
+                else:
+                    print("Didnt type that right, please tryagian")
+                return current
+
+        if response[0:2] == "GET":
+            print("There is nothing here anymore")
+
+        return current
 
 
 # The main function for the game
@@ -102,7 +114,7 @@ def main():
             break
         
         #will update the game
-        current = update(game,items,current,response)
+        current = update(game,items,current,response,moves)
         moves += 1 #updates moves
     
     print("\nThank you for playing")
