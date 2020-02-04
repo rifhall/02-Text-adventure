@@ -33,14 +33,10 @@ def check_inventory(item):
 
 
 #tells you the name and desc for the current room
-def render(game,items,current):
+def render(game,items,current,moves):
     c = game[current]
-    print(c["name"])
+    print("\n",c["name"])
     print(c["desc"])
-
-    #displays items
-    for i in c["items"]:
-        print(i["desc"])
     
 #Where we get the players actions
 def get_input():
@@ -53,6 +49,7 @@ def get_input():
     return response
 
 def update(game,items,current,response):
+    #allows the player to check their inventory
     if response == "INVENTORY":
         print("You are carrying:")
         if len(inventory) == 0:
@@ -66,7 +63,19 @@ def update(game,items,current,response):
     for e in c["exits"]:
         if response == e["exit"]:
             return e["target"]
-
+    
+    #will go through all the available items if they type get
+    if response == "GET":
+        #does a for loop for all items
+        for i in c["items"]:
+            #prints all the items
+            print(i["item"])
+            which = input()
+            which = which.upper()
+            if (which == i["item"]) and not (check_inventory(i["item"])):
+                print(i["take"])
+                inventory.append(i["item"])
+        return current
 
     return current
 
@@ -75,11 +84,12 @@ def update(game,items,current,response):
 def main():
     current = 'BEGIN'  # The starting location
     end_game = ['END']  # Any of the end-game locations
+    moves = 0 #moves the player has taken
 
     (game,items) = load_files()
 
     while True:
-        render(game, items, current)
+        render(game, items, current, moves)
         response = get_input()
         
         #breaks the game if they type this 
@@ -88,6 +98,10 @@ def main():
         
         #will update the game
         current = update(game,items,current,response)
+        moves += 1 #updates moves
+    
+    print("\nThank you for playing")
+    print("You took {} moves".format(moves))
 
 
 # run the main function

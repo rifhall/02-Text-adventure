@@ -10,7 +10,7 @@
 	},
 	"DECK": {
 		"name": "Deck",
-		"desc": "You are on the deck of the pirate ship 'The Meridian'. All the life boats are gone except for what appears to be one with a hole in the bottom.",
+		"desc": "You are on the deck of the pirate ship 'The Meridian'. There is not a soul left on this forsaken vessel. There does appear to be a life boat left behind.",
 		"exits": [{
 			"exit": "MAST",
 			"target": "MAST"
@@ -27,7 +27,11 @@
 			"exit": "CANNONR",
 			"target": "CANNONR"
 		}],
-		"items": []
+		"items": [{
+			"item": "A BROKEN LIFEBOAT",
+			"desc": "A Boat left behind. It was not of use to them but may be yet of use to you",
+			"take": "You bring the boat on the deck of the ship. You should be able to access it whenever."
+		}]
 	},
 	"MAST": {
 		"name": "Crows Nest",
@@ -90,8 +94,8 @@
 			"exit": "MUNITIONSR",
 			"target": "MUNITIONSR"
 		},{
-			"exit": "CANNONR",
-			"target": "CANNONR"
+			"exit": "PRISION",
+			"target": "PRISION"
 		}],
 		"items": []
 	},
