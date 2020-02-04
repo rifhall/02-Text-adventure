@@ -1,7 +1,7 @@
 {
 	"BEGIN": {
 		"name": "Welcome to 'ESCAPE FROM THE MERIDIAN', a text adventure game",
-		"desc": "In order to begin, type: START \nIf you ever need to quit the game, type: QUIT",
+		"desc": "In order to begin, type: START \nIf you ever need to quit the game, type: QUIT \nYou can pick up items in a room by typing: GET \nWhen you type GET an item will pop up, type the name in to pick it up",
 		"exits": [{
 			"exit": "START",
 			"target": "DECK"
@@ -10,7 +10,7 @@
 	},
 	"DECK": {
 		"name": "Deck",
-		"desc": "You are on the deck of the pirate ship 'The Meridian'. There is not a soul left on this forsaken vessel. There does appear to be a life boat left behind.",
+		"desc": "You are on the deck of the pirate ship 'The Meridian'. There is not a soul left on this forsaken vessel. Who knows where they all went?",
 		"exits": [{
 			"exit": "MAST",
 			"target": "MAST"
@@ -35,7 +35,7 @@
 	},
 	"MAST": {
 		"name": "Crows Nest",
-		"desc": "You are atop the mast in the Crow's Nest. You can't make out much but around you is a spyglass.",
+		"desc": "You are atop the mast in the Crow's Nest. You can't make out much but around you but the sea.",
 		"exits": [{
 			"exit": "DECK",
 			"target": "DECK"
@@ -48,7 +48,7 @@
 	},
 	"BOW": {
 		"name": "Bow of the ship",
-		"desc": "You are at the front of the ship, watching as the waves break against the wood. There are some devices about that you may be able to interact with.",
+		"desc": "You are at the front of the ship, watching as the waves break against the wood. The ship appears to be traveling around in random directions",
 		"exits": [{
 			"exit": "DECK",
 			"target": "DECK"
@@ -70,7 +70,7 @@
 	},
 	"HELM": {
 		"name": "HELM",
-		"desc": "You are on the back of the ship where the steering wheel is located.",
+		"desc": "You are on the back of the ship where the steering wheel is located. There are signs of a struggle all around but no trace of where they went",
 		"exits": [{
 			"exit": "DECK",
 			"target": "DECK"
@@ -79,7 +79,7 @@
 	},
 	"CREWR": {
 		"name": "CREW'S QUARTERS",
-		"desc": "You are below deck, where the crew slept. The place apears thourghly ransacked but you still may be able to find some things",
+		"desc": "You are below deck, where the crew slept. The place apears thourghly ransacked but you still may be able to find some things.",
 		"exits": [{
 			"exit": "DECK",
 			"target": "DECK"
@@ -87,11 +87,15 @@
 			"exit": "CANNONR",
 			"target": "CANNONR"
 		}],
-		"items": []
+		"items": [{
+			"item": "RUSTY KNIFE",
+			"desc": "A knife so dull and brittle it is throughly unsuited to combat",
+			"take": "You put the knife on your hip but if worse comes to worst you may somehow need it."
+		}]
 	},
 	"CANNONR": {
 		"name": "CANNON ROOM",
-		"desc": "You are bellow deck where the cannons should be kept for battle. Most appear broken or disassembled.",
+		"desc": "You are bellow deck where the cannons should be kept for battle. Most appear broken or disassembled. It seems eerily quiet.",
 		"exits": [{
 			"exit": "DECK",
 			"target": "DECK"
@@ -109,7 +113,7 @@
 	},
 	"MUNITIONSR": {
 		"name": "MUNITIONS STORAGE ROOM",
-		"desc": "It appears you are where the storage for the ships munitions. There is nothing out of the ordinary here or so it seems",
+		"desc": "It appears you are where the storage for the ships munitions. There is nothing out of the ordinary here or so it seems.",
 		"exits": [{
 			"exit": "PRISION",
 			"target": "PRISION"
@@ -143,7 +147,7 @@
 		"name": "BOTTOM OF THE SEA",
 		"desc": "You have drowned and met your fate.",
 		"exits": [{
-			"exit": "",
+			"exit": "NONE, YOUR LIFE IS OVER",
 			"target": ""
 		}],
 		"items": []
@@ -152,7 +156,7 @@
 		"name": "THE SHIP IS BREAKING APART!",
 		"desc": "While you are moving about you hear the wood creak and splint. In an instant the water comes crashing in and you are taken away...",
 		"exits": [{
-			"exit": "BOTTOM",
+			"exit": "NOWHERE, ONLY THE GODS KNOW WHERE YOU WILL END UP",
 			"target": "BOTTOM"
 		}],
 		"items": []

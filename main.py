@@ -35,8 +35,18 @@ def check_inventory(item):
 #tells you the name and desc for the current room
 def render(game,items,current,moves):
     c = game[current]
-    print("\n",c["name"])
+    print("")
+    print(c["name"])
     print(c["desc"])
+
+    #displays if there are available items
+    for i in c["items"]:
+        if not check_inventory(i["item"]):
+            print("There is an item in the room:")
+
+    print("\nAvailable exits: ")
+    for e in c["exits"]:
+        print(e["exit"])
     
 #Where we get the players actions
 def get_input():
