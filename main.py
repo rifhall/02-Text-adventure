@@ -59,12 +59,13 @@ def get_input():
     return response
 
 def update(game,items,current,response,moves):
+    print(moves)
     if moves == 20:
-        current == "BREAK"
+        current = "BREAK"
         return current
 
     elif moves > 20:
-        current == "BOTTOM"
+        current = "BOTTOM"
         return current
 
     else:
@@ -108,7 +109,7 @@ def update(game,items,current,response,moves):
 # The main function for the game
 def main():
     current = 'BEGIN'  # The starting location
-    end_game = ['END']  # Any of the end-game locations
+    end_game = ['BOTTOM']  # Any of the end-game locations
     moves = 0 #moves the player has taken
 
     (game,items) = load_files()

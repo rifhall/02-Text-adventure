@@ -152,7 +152,7 @@
 		}],
 		"items": []
 	},
-	"Break": {
+	"BREAK": {
 		"name": "THE SHIP IS BREAKING APART!",
 		"desc": "While you are moving about you hear the wood creak and splint. In an instant the water comes crashing in and you are taken away...",
 		"exits": [{
